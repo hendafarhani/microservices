@@ -1,0 +1,30 @@
+package com.hfarhani.gateway.enums;
+
+public enum ErrorEnum {
+    DATABASE(0, "A database error has occured."),
+    DUPLICATE_USER(1, "This user already exists."),
+    USER_NOT_FOUND(2, "This user is not registered"),
+    USER_DISABLED(3, "This user is not active"),
+    BAD_CREDENTIALS(4, "Bad credentials");
+
+    private final int code;
+    private final String description;
+
+    private ErrorEnum(int code, String description) {
+        this.code = code;
+        this.description = description;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public int getCode() {
+        return code;
+    }
+
+    @Override
+    public String toString() {
+        return code + ": " + description;
+    }
+}
